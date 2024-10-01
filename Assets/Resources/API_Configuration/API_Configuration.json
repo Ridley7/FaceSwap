@@ -1,0 +1,5 @@
+{
+	"base_url" : "https://data.deusens.com/",
+	"token": null,
+	"token_request_time_out": 15
+}

@@ -1,0 +1,91 @@
+{
+	"dataList": [{
+		"key": "CanvasBlackLoadingText",
+		"stringsToRead": [{
+			"key": "ENGLISH",
+			"text": "loading manolo"
+		}, {
+			"key": "SPANISH",
+			"text": "cargando manolo"
+		}, {
+			"key": "ITALIAN",
+			"text": "italiano elegido"
+		}, {
+			"key": "DEUTSCH",
+			"text": "aleman elegido"
+		}, {
+			"key": "FRENCH",
+			"text": "frances elegido"
+		}, {
+			"key": "JAPANESE",
+			"text": "日本語"
+		}]
+
+	}, {
+		"key": "CanvasBlackText (2)",
+		"stringsToRead": [{
+			"key": "ENGLISH",
+			"text": "Pep"
+		}, {
+			"key": "SPANISH",
+			"text": "Pepe"
+		}, {
+			"key": "ITALIAN",
+			"text": "Pepito"
+		}, {
+			"key": "DEUTSCH",
+			"text": "deutsh"
+		}, {
+			"key": "FRENCH",
+			"text": "joc"
+		}, {
+			"key": "JAPANESE",
+			"text": "日本語"
+		}]
+
+	}, {
+		"key": "CanvasBlackText (1)",
+		"stringsToRead": [{
+			"key": "ENGLISH",
+			"text": "example 2\nfuck this is great"
+		}, {
+			"key": "SPANISH",
+			"text": "ejemplo 2\njoder que guay"
+		}, {
+			"key": "ITALIAN",
+			"text": "example 2\njoder que guay"
+		}, {
+			"key": "DEUTSCH",
+			"text": "example 2\njoder que guay"
+		}, {
+			"key": "FRENCH",
+			"text": "example 2\njoder que guay"
+		}, {
+			"key": "JAPANESE",
+			"text": "日本語"
+		}]
+
+	}, {
+		"key": "CanvasBlackTextTranslation",
+		"stringsToRead": [{
+			"key": "ENGLISH",
+			"text": "Pep"
+		}, {
+			"key": "SPANISH",
+			"text": "Pepe"
+		}, {
+			"key": "ITALIAN",
+			"text": "Pepito"
+		}, {
+			"key": "DEUTSCH",
+			"text": "deutsh"
+		}, {
+			"key": "FRENCH",
+			"text": "joc"
+		}, {
+			"key": "JAPANESE",
+			"text": "日本語"
+		}]
+
+	}]
+}

@@ -1,0 +1,117 @@
+{
+	"dataList": [{
+			"key": "LoadingText",
+			"stringsToRead": [{
+				"key": "ENGLISH",
+				"text": "loading"
+			}, {
+				"key": "SPANISH",
+				"text": "cargando"
+			}, {
+				"key": "ITALIAN",
+				"text": "italiano elegido"
+			}, {
+				"key": "DEUTSCH",
+				"text": "aleman elegido"
+			}, {
+				"key": "FRENCH",
+				"text": "frances elegido"
+			}, {
+				"key": "JAPANESE",
+				"text": "日本語"
+			}]
+
+		}, {
+			"key": "Mission1",
+			"stringsToRead": [{
+				"key": "ENGLISH",
+				"text": "Options"
+			}, {
+				"key": "SPANISH",
+				"text": "Opciones"
+			}, {
+				"key": "ITALIAN",
+				"text": "Jugare"
+			}, {
+				"key": "DEUTSCH",
+				"text": "deutsh"
+			}, {
+				"key": "FRENCH",
+				"text": "joc"
+			}, {
+				"key": "JAPANESE",
+				"text": "日本語"
+			}]
+
+		}, {
+			"key": "Mission2",
+			"stringsToRead": [{
+				"key": "ENGLISH",
+				"text": "Play"
+			}, {
+				"key": "SPANISH",
+				"text": "Jugar"
+			}, {
+				"key": "ITALIAN",
+				"text": "Jugare"
+			}, {
+				"key": "DEUTSCH",
+				"text": "deutsh"
+			}, {
+				"key": "FRENCH",
+				"text": "joc"
+			}, {
+				"key": "JAPANESE",
+				"text": "日本語"
+			}]
+
+		}, {
+			"key": "Option2",
+			"stringsToRead": [{
+				"key": "ENGLISH",
+				"text": "Cancel"
+			}, {
+				"key": "SPANISH",
+				"text": "Jugar"
+			}, {
+				"key": "ITALIAN",
+				"text": "Jugare"
+			}, {
+				"key": "DEUTSCH",
+				"text": "deutsh"
+			}, {
+				"key": "FRENCH",
+				"text": "joc"
+			}, {
+				"key": "JAPANESE",
+				"text": "日本語"
+			}]
+
+		}, {
+			"key": "Option3",
+			"stringsToRead": [{
+				"key": "ENGLISH",
+				"text": "Fuck you!"
+			}, {
+				"key": "SPANISH",
+				"text": "Jugar"
+			}, {
+				"key": "ITALIAN",
+				"text": "Jugare"
+			}, {
+				"key": "DEUTSCH",
+				"text": "deutsh"
+			}, {
+				"key": "FRENCH",
+				"text": "joc"
+			}, {
+				"key": "JAPANESE",
+				"text": "日本語"
+			}]
+
+		}
+
+		
+		
+	]
+}

@@ -1,0 +1,135 @@
+{
+	"dataList": [{
+		"key": "PanelButton (1)TextOption2",
+		"stringsToRead": [{
+			"key": "ENGLISH",
+			"text": "selected english"
+		}, {
+			"key": "SPANISH",
+			"text": "español elegido"
+		}, {
+			"key": "ITALIAN",
+			"text": "italiano elegido"
+		}, {
+			"key": "DEUTSCH",
+			"text": "aleman elegido"
+		}, {
+			"key": "FRENCH",
+			"text": "frances elegido"
+		}, {
+			"key": "JAPANESE",
+			"text": "日本語"
+		}]
+
+	}, {
+		"key": "OptionsPanelTextTitleOptions",
+		"stringsToRead": [{
+			"key": "ENGLISH",
+			"text": "Options"
+		}, {
+			"key": "SPANISH",
+			"text": "Opciones"
+		}, {
+			"key": "ITALIAN",
+			"text": "Opciones"
+		}, {
+			"key": "DEUTSCH",
+			"text": "optiunks"
+		}, {
+			"key": "FRENCH",
+			"text": "joc"
+		}, {
+			"key": "JAPANESE",
+			"text": "日本語"
+		}]
+
+	}, {
+		"key": "PanelButtonTextOption1",
+		"stringsToRead": [{
+			"key": "ENGLISH",
+			"text": "Option1"
+		}, {
+			"key": "SPANISH",
+			"text": "Opcion 1"
+		}, {
+			"key": "ITALIAN",
+			"text": "Opciones"
+		}, {
+			"key": "DEUTSCH",
+			"text": "optiunks"
+		}, {
+			"key": "FRENCH",
+			"text": "joc"
+		}, {
+			"key": "JAPANESE",
+			"text": "日本語"
+		}]
+
+	}, {
+		"key": "PanelButtonTextButtonPlay",
+		"stringsToRead": [{
+			"key": "ENGLISH",
+			"text": "Play"
+		}, {
+			"key": "SPANISH",
+			"text": "Jugar"
+		}, {
+			"key": "ITALIAN",
+			"text": "Opciones"
+		}, {
+			"key": "DEUTSCH",
+			"text": "optiunks"
+		}, {
+			"key": "FRENCH",
+			"text": "joc"
+		}, {
+			"key": "JAPANESE",
+			"text": "日本語"
+		}]
+
+	}, {
+		"key": "PanelButton (1)TextButtonOptions",
+		"stringsToRead": [{
+			"key": "ENGLISH",
+			"text": "Options"
+		}, {
+			"key": "SPANISH",
+			"text": "Opciones"
+		}, {
+			"key": "ITALIAN",
+			"text": "Opciones"
+		}, {
+			"key": "DEUTSCH",
+			"text": "optiunks"
+		}, {
+			"key": "FRENCH",
+			"text": "joc"
+		}, {
+			"key": "JAPANESE",
+			"text": "日本語"
+		}]
+
+	}, {
+		"key": "MenuPanelTextTitleMenu",
+		"stringsToRead": [{
+			"key": "ENGLISH",
+			"text": "Title of the game"
+		}, {
+			"key": "SPANISH",
+			"text": "Titulo del juego"
+		}, {
+			"key": "ITALIAN",
+			"text": "Opciones"
+		}, {
+			"key": "DEUTSCH",
+			"text": "optiunks"
+		}, {
+			"key": "FRENCH",
+			"text": "joc"
+		}, {
+			"key": "JAPANESE",
+			"text": "日本語"
+		}]
+
+	}]
+}
