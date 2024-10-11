@@ -1,5 +1,5 @@
 {
-	"base_url" : "https://data.deusens.com/",
-	"token": null,
-	"token_request_time_out": 15
+	"base_url" : "https://api.novita.ai/",
+	"token": "992ad83d-6983-4efe-ba13-0edde797f715",
+	"token_request_time_out": 60
 }

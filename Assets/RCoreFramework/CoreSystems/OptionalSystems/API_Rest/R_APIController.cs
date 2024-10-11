@@ -22,7 +22,6 @@ namespace r_core.coresystems.optionalsystems.api
         
         private void LoadAPIController()
         {
-            //petition_controller = new R_PetitionController(false, "https://data.deusens.com/", null, 15);
             petition_controller = new R_PetitionController();
 
             
@@ -49,6 +48,58 @@ namespace r_core.coresystems.optionalsystems.api
 
         #region Llamadas
 
+        public IEnumerator GetTileImage<T>(Action<T> lambda)
+        {
+            //Tengo que hacer un body aqui
+            
+            var bodyJson = new {
+                negative_prompt = "ng_deepnegative_v1_75t, (badhandv4:1.2), (worst quality:2), (low quality:2), (normal quality:2), lowres, bad anatomy, bad hands, ((monochrome)), ((grayscale)) watermark, moles",
+                prompt = "dogs",
+                width = 1024,
+                height = 1024
+            };
+            
+
+            UnityWebRequest webRequest = petition_controller.CreateApiPostRequest("v3/create-tile", bodyJson);
+            yield return webRequest.SendWebRequest();
+
+            //R_Response<T> response = null;
+            T response = default(T);
+
+            try{
+
+
+                if(webRequest.isDone && webRequest.error == null){
+
+                    response = JsonConvert.DeserializeObject<T>(webRequest.downloadHandler.text);
+                    lambda(response);
+                }
+                else if (webRequest.error != null)
+                {
+                    if(webRequest.error.Contains("Request timeout"))
+                    {
+                        throw new RequestTimeoutException("El tiempo de petición se ha agotado");
+                    }
+                    else
+                    {
+                        Debug.Log(webRequest.error);
+                    }
+                }
+
+                //ShowIfFailResponse(webRequest);
+            }
+            catch (RequestTimeoutException timeoutEx)
+            {
+                Debug.LogError(timeoutEx.Message);
+                // Aquí puedo manejar el timeout de forma específica si lo necesito
+            }
+            catch (Exception e)
+            {
+                Debug.LogError(e);
+            }
+        }
+
+
         public IEnumerator GetTest<T>(Action<T> lambda)
         {
             UnityWebRequest webRequest = petition_controller.CreateApiGetRequest("items/test", null);
@@ -74,12 +125,14 @@ namespace r_core.coresystems.optionalsystems.api
                 Debug.LogError(e);
             }
         }
+        
 
         private void ShowIfFailResponse(UnityWebRequest webRequest)
         {
             if (webRequest.isDone && webRequest.error == null)
             {
-                //Debug.Log(webRequest.downloadHandler.text);
+                Debug.Log("Enseñando respuesta en RAW");
+                Debug.Log(webRequest.downloadHandler.text);
             }
             else
             {

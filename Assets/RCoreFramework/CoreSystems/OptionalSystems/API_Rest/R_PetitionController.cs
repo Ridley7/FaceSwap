@@ -32,7 +32,7 @@ public class R_PetitionController
             return;
         }
 
-        //Decodificamos la información del JSON de datos
+        //Decodificamos la informaciï¿½n del JSON de datos
         Hashtable decodedData = (Hashtable)MiniJSON.jsonDecode(data_configuration.text);
         
         verbose = false;
@@ -91,6 +91,7 @@ public class R_PetitionController
             byte[] bodyData = Encoding.UTF8.GetBytes(bodyString);
             request.uploadHandler = new UploadHandlerRaw(bodyData);
             request.SetRequestHeader("Content-Type", "application/json");
+            
         }
 
         if (isImageFile)
