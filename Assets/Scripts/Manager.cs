@@ -11,10 +11,101 @@ public class Manager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //Hacemos una llamada a una API
-        //StartCoroutine(PeticionTest());
-		StartCoroutine(CreateTileImage());
+        string faceImageFileBase64 = string.Empty;
+        string imageFileBase64 = string.Empty;
 
+        //La imagen de la cara es faceImageFile.
+        //Esta imagen esta en resources y tengo que cargarla
+        Texture2D faceImageFile = Resources.Load<Texture2D>("API_Configuration/face_image");
+        
+        //Codificamos la imagen a Base64
+        if(faceImageFile != null)
+        {
+
+
+            //Convertimos la imagen a un array de bytes
+            byte[] imageBytes = faceImageFile.EncodeToJPG();
+        
+
+            //Convertimos los bytes a una cadena Base64
+            faceImageFileBase64 = System.Convert.ToBase64String(imageBytes);
+
+            Debug.Log("Imagen de la cara convertida a Base64");
+
+        }else
+        {
+            Debug.Log("No se ha podido cargar la imagen de la cara");
+        }
+
+        //La imagen que queremos fusionar es imageFile
+        //Esta imagen esta en resources y tengo que cargarla
+        
+        Texture2D imageFile = Resources.Load<Texture2D>("API_Configuration/tribu_mesoamericana");
+      
+      
+        //Codificamos la imagen a Base64
+        if(imageFile != null)
+        {
+            //Convertimos la imagen a un array de bytes
+            byte[] imageBytes = imageFile.EncodeToJPG();
+
+            //Convertimos los bytes a una cadena Base64
+            imageFileBase64 = System.Convert.ToBase64String(imageBytes);
+
+            Debug.Log("Imagen a fusionar convertida a Base64");
+
+        }
+        else
+        {
+            Debug.Log("No se ha podido cargar la imagen a fusionar");
+        }
+
+        if(faceImageFile != null && imageFile != null)
+        {
+            //Hacemos una llamada a una API
+            StartCoroutine(CreateFaceFusion(faceImageFileBase64, imageFileBase64));
+            Debug.Log("Llamada a la API de FaceFusion");
+        }
+        
+
+        //Hacemos una llamada a una API
+		//StartCoroutine(CreateTileImage());
+
+    }
+
+    void FixColorChannels(Texture2D texture)
+    {
+        Color[] pixels = texture.GetPixels();
+
+        for (int i = 0; i < pixels.Length; i++)
+        {
+            Color pixel = pixels[i];
+
+            // Intercambiar el canal rojo con el azul
+            float temp = pixel.r;
+            pixel.r = pixel.b;
+            pixel.b = temp;
+
+            pixels[i] = pixel;
+        }
+
+        // Aplicar los cambios
+        texture.SetPixels(pixels);
+        texture.Apply();
+    }
+
+    //Facefusion
+    private IEnumerator CreateFaceFusion(string faceImageFile, string imageFile)
+    {
+        yield return R_APIController.GetInstance().FaceFusion<ResponseTileImage>(faceImageFile, imageFile, lambda =>
+        {
+            Debug.Log("Respuesta de Novita AI: ");
+            Debug.Log(lambda.image_type);
+
+            image = Base64ToTexture2D(lambda.image_file);
+            FixColorChannels(image);
+            textura.mainTexture = image;
+        });
     }
 
 	//Metodo para probar llamada a API
@@ -22,19 +113,8 @@ public class Manager : MonoBehaviour
 	{
 		yield return R_APIController.GetInstance().GetTileImage<ResponseTileImage>(lambda =>
 		{
-			Debug.Log("Respuesta de Novita AI: ");
-			Debug.Log(lambda.image_type);
-
             image = Base64ToTexture2D(lambda.image_file);
             textura.mainTexture = image;
-
-
-			//Faltaria:
-			/*
-			En lambda.image_file tenemos el contenido de la imagen codificado en base 64.
-			Faltaria descodificar ese contenido y mostrarlo al usuario
-			*/
-
 		});
 	}
 

@@ -46,7 +46,36 @@ namespace r_core.coresystems.optionalsystems.api
 
         #endregion
 
-        #region Llamadas
+        #region Llamadas a la API de Novita AI
+        public IEnumerator FaceFusion<T>(string faceImageFile, string imageFile, Action<T> lambda)
+        {
+            var bodyJson = new{
+                face_image_file = faceImageFile,
+                image_file = imageFile,
+            };
+
+            UnityWebRequest webRequest = petition_controller.CreateApiPostRequest("v3beta/facefusion", bodyJson);
+            yield return webRequest.SendWebRequest();
+
+            T response = default(T);
+
+            try
+            {
+                if (webRequest.isDone && webRequest.error == null)
+                {
+
+                    response = JsonConvert.DeserializeObject<T>(webRequest.downloadHandler.text);
+                    lambda(response);
+                }
+
+                ShowIfFailResponse(webRequest);
+            }
+            catch (Exception e)
+            {
+                Debug.LogError(e);
+            }
+        }
+
 
         public IEnumerator GetTileImage<T>(Action<T> lambda)
         {
