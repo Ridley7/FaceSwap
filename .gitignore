@@ -72,4 +72,4 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
 # Fichero de configuracion personal
-/[Aa]ssets/Resources/API_Configuration.json
+/[Aa]ssets/Resources/API_Configuration/
