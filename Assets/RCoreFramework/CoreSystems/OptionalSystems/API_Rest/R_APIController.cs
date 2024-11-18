@@ -63,7 +63,6 @@ namespace r_core.coresystems.optionalsystems.api
             {
                 if (webRequest.isDone && webRequest.error == null)
                 {
-
                     response = JsonConvert.DeserializeObject<T>(webRequest.downloadHandler.text);
                     lambda(response);
                 }

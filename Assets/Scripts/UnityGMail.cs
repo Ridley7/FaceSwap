@@ -1,3 +1,4 @@
+/*
 using System.ComponentModel;
 using System.Net;
 using System.Net.Mail;
@@ -41,9 +42,10 @@ public class UnityGMail
         smtp.Send(mail);
     }
 }
+*/
 
 
-/*
+
 using System.IO;
 using System.Net.Mail;
 using System.Net;
@@ -60,7 +62,7 @@ public class UnityGMail
         mail.Subject = "Plantilla FaceSwap";
 
         // Leer la plantilla HTML desde un archivo
-        string htmlBody = File.ReadAllText("/Users/blackdata/Desktop/plantilla.html");
+        string htmlBody = File.ReadAllText("/Users/blackdata/Desktop/Repositorios/FaceSwap/Assets/Resources/API_Configuration/plantilla.html");
 
         // Usar el HTML como cuerpo del correo
         mail.Body = htmlBody;
@@ -72,6 +74,8 @@ public class UnityGMail
 
         SmtpClient smtp = new SmtpClient("smtp.gmail.com");
         smtp.Port = 587;
+        //Lo de mama ynvh sqvc hldq es un App Password, si tu cuenta tiene verificación en dos pasos, 
+        //debes seguir estas instrucciones para generar la contraseña: https://support.google.com/accounts/answer/185833?hl=en.
         smtp.Credentials = new NetworkCredential("metadridley7@gmail.com", "mama ynvh sqvc hldq") as ICredentialsByHost;
         smtp.EnableSsl = true;
 
@@ -84,4 +88,3 @@ public class UnityGMail
     }
 }
 
-*/
