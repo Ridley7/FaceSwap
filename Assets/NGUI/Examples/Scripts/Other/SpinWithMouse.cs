@@ -19,11 +19,14 @@ public class SpinWithMouse : MonoBehaviour
 
 		if (target != null)
 		{
-			target.localRotation = Quaternion.Euler(0f, -0.5f * delta.x * speed, 0f) * target.localRotation;
+			//target.localRotation = Quaternion.Euler(0f, -0.5f * delta.x * speed, 0f) * target.localRotation;
+			target.localRotation = Quaternion.Euler(0f, 0f, 0.5f * delta.y * speed) * mTrans.localRotation;
+			//Debug.Log("Rotando ");
 		}
 		else
 		{
-			mTrans.localRotation = Quaternion.Euler(0f, -0.5f * delta.x * speed, 0f) * mTrans.localRotation;
+			//mTrans.localRotation = Quaternion.Euler(0f, -0.5f * delta.x * speed, 0f) * mTrans.localRotation;
+			mTrans.localRotation = Quaternion.Euler(0f, 0f, 0.5f * delta.y * speed) * mTrans.localRotation;
 		}
 	}
 }
