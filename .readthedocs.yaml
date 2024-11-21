@@ -1,0 +1,14 @@
+# Configuración básica para Read the Docs
+
+version: 2  # Versión del formato de configuración
+build:
+  os: ubuntu-22.04  # Sistema operativo
+  tools:
+    python: "3.9"  # Versión de Python
+
+sphinx:
+  configuration: docs/conf.py  # Ruta al archivo conf.py de Sphinx
+
+python:
+  install:
+    - requirements: docs/requirements.txt  # Archivo de requisitos para dependencias adicionales
