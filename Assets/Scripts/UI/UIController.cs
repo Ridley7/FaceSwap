@@ -1,17 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
+using r_core.coresystems.optionalsystems.messages;
 
 public class UIController : MonoBehaviour
 {
     public UIScrollView scrollView;
-    private float delta = -0.1f;
+    public int delta;
 
     // Start is called before the first frame update
-    
-    private void OnEnable() {
-        
-    }
+   
 
     public void ClickButtonMale()
     {
@@ -25,13 +22,42 @@ public class UIController : MonoBehaviour
 
     private void MoveForward()
     {
-        scrollView.Scroll(delta);
+        //scrollView.Scroll(delta);
+        scrollView.MoveAbsolute(Vector3.left * delta);
     }
 
     private void MoveBackward()
     {
-        scrollView.Scroll(-delta);
+        //scrollView.Scroll(-delta);
+        scrollView.MoveAbsolute(Vector3.left * -delta);
     }
 
+    private void OnEnable() 
+    {
+        R_MessagesController<R_MessageUI>.AddObserver((int)GameEnums.MessagesTypes.UI, HandleUI);
+    }
+
+    private void OnDisable() 
+    {
+        R_MessagesController<R_MessageUI>.RemoveObserver((int)GameEnums.MessagesTypes.UI, HandleUI);    
+    }
+
+    private void HandleUI(R_MessageUI message)
+    {
+
+        if (message.SenderId != (uint)GameEnums.Senders.ButtonCircularMenu) return;
+
+        switch (message.actionUI)
+        {
+            case GameEnums.ActionUI.MoveForward:
+                MoveForward();
+                break;
+            case GameEnums.ActionUI.MoveBackward:
+                MoveBackward();
+                break;
+            default:
+                break;
+        }
+    }
 
 }
